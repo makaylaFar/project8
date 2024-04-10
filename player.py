@@ -239,7 +239,7 @@ class spaceShip(SphereCollideObject):
 
             #self.Explode(intoPosition)
 
-        elif strippedString == "Planet":
+        elif strippedString == "planet":
             Missile.Intervals[shooter].finish()
             self.PlanetDestroy(victim)
 
