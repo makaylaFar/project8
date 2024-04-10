@@ -94,15 +94,19 @@ class spaceJam(ShowBase):
         
         self.SetCamera()    
         fullCycle = 60
+        halfCycle = 30
 
         for j in range(fullCycle):
             spaceJamClasses.Drone.droneCount += 1
             nickName = "Drone" + str(spaceJamClasses.Drone.droneCount)
-            self.DrawCloudDefense(self.planet1, nickName)
             self.DrawBaseballSeams(self.planet2, nickName, j, fullCycle)
+
+        for j in range(halfCycle):
             self.DrawCircleXZ(self.planet5, nickName)
             self.DrawCircleXY(self.planet3, nickName)
             self.DrawCircleYZ(self.planet4, nickName)
+            self.DrawCloudDefense(self.planet1, nickName)
+            
             
 
 app = spaceJam()  
