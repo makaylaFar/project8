@@ -7,7 +7,7 @@ from collideObjectBase import *
 from direct.task import Task
 from typing import Callable
 from panda3d.core import *
-from random import *
+import random
 
 
 class spaceShip(SphereCollideObject):
@@ -46,6 +46,12 @@ class spaceShip(SphereCollideObject):
 
         self.fireSound = loader.loadSfx("./assets/soundEffects/pew-pew.mp3")
         self.fireSound.setVolume(0.5)
+
+        self.droneDeath = loader.loadSfx("./assets/soundEffects/yippee-tbh.mp3")
+        self.droneDeath.setVolume(1)
+
+        self.planetDestroyed = loader.loadSfx("./assets/soundEffects/beepboopdeath.mp3")
+        self.planetDestroyed.setVolume(1)
 
         self.enableHUD()
 
@@ -243,9 +249,10 @@ class spaceShip(SphereCollideObject):
             Missile.Intervals[shooter].finish()
             self.PlanetDestroy(victim)
 
-        elif strippedString == "Space Station":
+        elif strippedString == "spaceStation":
             Missile.Intervals[shooter].finish()
             self.SpaceStationDestroy(victim)
+
         
 
         else:
@@ -259,11 +266,13 @@ class spaceShip(SphereCollideObject):
         # start the explosion
         self.explodeNode.setPos(hitPosition)
         self.Explode(hitPosition)
+        self.droneDeath.play()
 
     def PlanetDestroy(self, victim: NodePath):
         nodeID = self.render.find(victim)
 
         self.taskManager.add(self.PlanetShrink, name = "PlanetShrink", extraArgs = [nodeID], appendTask = True)
+        self.planetDestroyed.play()
 
     def SpaceStationDestroy(self, victim: NodePath):
         nodeID = self.render.find(victim)
