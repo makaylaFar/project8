@@ -102,9 +102,20 @@ class spaceJam(ShowBase):
             self.DrawBaseballSeams(self.planet2, nickName, j, fullCycle)
 
         for j in range(halfCycle):
+            spaceJamClasses.Drone.droneCount += 1
+            nickName = "Drone" + str(spaceJamClasses.Drone.droneCount)
             self.DrawCircleXZ(self.planet5, nickName)
+
+            spaceJamClasses.Drone.droneCount += 1
+            nickName = "Drone" + str(spaceJamClasses.Drone.droneCount)
             self.DrawCircleXY(self.planet3, nickName)
+
+            spaceJamClasses.Drone.droneCount += 1
+            nickName = "Drone" + str(spaceJamClasses.Drone.droneCount)
             self.DrawCircleYZ(self.planet4, nickName)
+            
+            spaceJamClasses.Drone.droneCount += 1
+            nickName = "Drone" + str(spaceJamClasses.Drone.droneCount)
             self.DrawCloudDefense(self.planet1, nickName)
             
             
