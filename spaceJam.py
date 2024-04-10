@@ -85,8 +85,8 @@ class spaceJam(ShowBase):
         self.sentinal1 = spaceJamClasses.Orbiter(self.loader, self.taskMgr, "./assets/DroneDefender/DroneDefender.obj", self.render, "Drone", 6.0, "./assets/DroneDefender/octotoad1_auv.png", self.planet5, 900, "MLB", self.ship)
         self.sentinal2 = spaceJamClasses.Orbiter(self.loader, self.taskMgr, "./assets/DroneDefender/DroneDefender.obj", self.render, "Drone", 6.0, "./assets/DroneDefender/octotoad1_auv.png", self.planet1, 500, "MLB", self.ship)
 
-        self.cloudWander1 = spaceJamClasses.Orbiter(self.loader, self.taskMgr, "./assets/DroneDefender/DroneDefender.obj", self.render, "Drone", 6.0, "./assets/DroneDefender/octotoad1_auv.png", self.planet2, 500, "cloud", self.ship)
-        self.cloudWander2 = spaceJamClasses.Orbiter(self.loader, self.taskMgr, "./assets/DroneDefender/DroneDefender.obj", self.render, "Drone", 6.0, "./assets/DroneDefender/octotoad1_auv.png", self.planet4, 500, "cloud", self.ship)
+        self.cloudWander1 = spaceJamClasses.Orbiter(self.loader, self.taskMgr, "./assets/DroneDefender/DroneDefender.obj", self.render, "Drone", 6.0, "./assets/DroneDefender/octotoad1_auv.png", self.planet2, 500, "Cloud", self.ship)
+        self.cloudWander2 = spaceJamClasses.Orbiter(self.loader, self.taskMgr, "./assets/DroneDefender/DroneDefender.obj", self.render, "Drone", 6.0, "./assets/DroneDefender/octotoad1_auv.png", self.planet4, 500, "Cloud", self.ship)
 
         self.Wanderer1 = spaceJamClasses.Wanderer(self.loader, "./assets/DroneDefender/DroneDefender.obj", self.render, "Drone", 6.0, "./assets/DroneDefender/octotoad1_auv.png", self.ship)
         self.Wanderer2 = spaceJamClasses.Wanderer(self.loader, "./assets/DroneDefender/DroneDefender.obj", self.render, "Drone", 3.0, "./assets/DroneDefender/octotoad1_auv.png", self.ship)
